@@ -30,8 +30,10 @@ quote), `"` (double quote), or <code>`</code> (backtick).
 ```
 
 A backtick pair indicates a string formation syntax used to create a multiline string literal or a string value from the
-string representations of expressions. An expression is a unit of code, when executed, returns a value; for example,
-a [variable](variable.md) name or a [function](function.md) call.
+string representations of expressions. An expression is a unit of code, if evaluated, returns a value; for example,
+a [variable](variable.md) name. A statement is a unit of code representing a complete action, such as
+a [variable declaration, an assignment](variable.md#declare-and-assign-variables), etc. Sometimes, an expression is also
+a statement; for example, a [function call](function.md#call-a-function).
 
 ```
 `This is the first line
