@@ -8,8 +8,8 @@ In JavaScript, we have two data type groups: simple (primitive) and complex (obj
 The characteristic of primitive types is immutable. That is, we can not change the value after creating. Common
 primitive types in JavaScript are:
 
-- [number](#number-type) 
-- [string](#string-type) 
+- [number](#number-type)
+- [string](#string-type)
 - [boolean](#boolean-type)
 - [undefined](#undefined-type)
 - [null](#null-type)
@@ -20,7 +20,26 @@ All numeric data, including floating-point (having a decimal point) numbers.
 
 ### String type
 
-Sequence of characters
+A string is a sequence of characters. In JavaScript, we can represent a string value in source code using `'` (single
+quote), `"` (double quote), or <code>`</code> (backtick).
+
+```
+'kihon.vn'
+"kihon.vn"
+`kihon.vn`
+```
+
+A backtick pair indicates a string formation syntax used to create a multiline string literal or a string value from the
+string representations of expressions. An expression is a unit of code, when executed, returns a value; for example,
+a [variable](variable.md) name or a [function](function.md) call.
+
+```
+`This is the first line
+This is the second line
+This is the last line`
+
+`This is ${variableName}`
+```
 
 ### Boolean type
 
