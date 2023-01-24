@@ -1,7 +1,8 @@
 # Data types in Node.js
 
 A data type is a named group of data characteristics; for example, numbers and sequences of characters (i.e., strings).
-In JavaScript, we have two data type groups: simple (primitive) and complex (object).
+In JavaScript, we have two data type groups: [simple (primitive)](#common-primitive-types)
+and [complex (object)](#complex-types).
 
 ## Common primitive types
 
@@ -58,6 +59,9 @@ Logical value, either `true` or `false`
 ## Complex types
 
 A complex type is a combination of others. Common JavaScript built-in types are `object` and `function`. Note
-that `function` is an `object` type having the callable characteristic, and whenever we create a [function](function.md)
-, we create a new `object` type. Non built-in types are called user-defined (or custom) types.
+that `function` is an `object` type having the callable characteristic.
 
+## User-defined (custom) types
+
+Whenever we define a [function](function.md), we create a new `function` type (it's also a new `object` type). And we
+called them user-defined (custom) types.
