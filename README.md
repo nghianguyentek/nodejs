@@ -1,10 +1,11 @@
 # Node.js Quick Guides
 
-Node.js is a runtime environment to execute JavaScript (and TypeScript). We need to install it on the target machine (for local development, it's your laptop). If you use an IDE to develop, check its guide. As usual, we should choose an LTS (Long Term Support) version only.
-
+Node.js is a runtime environment to execute JavaScript (and TypeScript). We need to install it on the target machine (for local development, it's your laptop). If you plan to deploy your application on a hosting, check with the provider the version they support.
 
 ## JavaScript in Node.js quick guides
 
 - [Variable](variable.md)
 - [Function](function.md)
+- [Data type](data-type.md)
 - [Module](module.md)
+- [Scope](scope.md)

@@ -4,7 +4,7 @@ A data type is a named group of data characteristics; for example, numbers and s
 In JavaScript, we have two data type groups: [simple (primitive)](#common-primitive-types)
 and [complex (object)](#complex-types).
 
-## Common primitive types
+## Primitive types
 
 The characteristic of primitive types is immutable. That is, we can not change the value after creating. Common
 primitive types in JavaScript are:
@@ -30,7 +30,7 @@ quote), `"` (double quote), or <code>`</code> (backtick).
 `kihon.vn`
 ```
 
-A backtick pair indicates a string formation syntax used to create a multiline string literal or a string value from the
+A backtick pair indicates a string formation (template) syntax used to create a multiline string literal or a string value from the
 string representations of expressions. An expression is a unit of code, if evaluated, returns a value; for example,
 a [variable](variable.md) name. A statement is a unit of code representing a complete action, such as
 a [variable declaration, an assignment](variable.md#declare-and-assign-variables), etc. Sometimes, an expression is also
@@ -60,6 +60,16 @@ Logical value, either `true` or `false`
 
 A complex type is a combination of others. Common JavaScript built-in types are `object` and `function`. Note
 that `function` is an `object` type having the callable characteristic.
+
+### object type
+
+An `object` is a collection of key-value pairs. Since a value can be any type, we call the pair whose value is a function, a method, and other pairs, properties of the object. We declare an empty object using the object literal, `{}`.
+
+```
+const obj = {};
+obj.propertyName = 1;
+obj.methodName = function() { ... };
+```
 
 ## User-defined (custom) types
 
