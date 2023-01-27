@@ -1,60 +1,72 @@
-const config = { sid: 'sid', 
-    domain: undefined,
-    path: undefined,
-    secure: true,
-    httpOnly: true
+let sid = 'sid',
+    secure = true,
+    httpOnly = true,
+    sidLength = sid.length + 1
+
+function generateHeaderValue(id) {
+    let headerValue = `${sid}=${id}`
+
+    if (secure)
+        headerValue += securePart
+
+    if (httpOnly)
+        headerValue += httpOnlyPart
+
+    return headerValue
 }
 
-const domainPart = ';Domain='
-    pathPart = ';Path=',
-    securePart = ';Secure',
-    httpOnlyPart = ';HttpOnly',
-    listSeparator = '; ',
-    nameValueSeparator = '='
-
-function newSessionId() {
+function generateSessionId() {
     return Date.now().toString();
 }
 
-function Session(cookies) {
-    let id = cookies[config.sid],
-        setCookieValue
+let sessionIdGenerator = generateSessionId,
+    headerValueGenerator = generateHeaderValue
 
-    const isNew = id === undefined
+const sessions = {},
+    securePart = ';Secure',
+    httpOnlyPart = ';HttpOnly',
+    listSeparator = ';',
+    nameValueSeparator = '='
+
+function Session(id) {
+    let isNew = id === undefined,
+        data = {}
+
     if (isNew) {
-        id = newSessionId()
-        setCookieValue = `${config.sid}=${id}`;
-
-        if (config.domain)
-            setCookieValue += `${domainPart}${config.domain}` 
-        
-        if (config.path)
-            setCookieValue += `${pathPart}${config.domain}` 
-
-        if (config.secure)
-            setCookieValue += securePart
-
-        if (config.httpOnly)
-            setCookieValue += httpOnlyPart
+        id = sessionIdGenerator()
+        sessions[id] = this
     }
-
 
     this.isNew = () => isNew
     this.getId = () => id
-    this.getSetCookieHeaderValue = () => setCookieValue
+    this.getHeaderValue = () => headerValueGenerator(id)
+    this.renew = () => {
+        isNew = true
+        data = {}
+    }
 }
 
 exports.from = req => {
-    let header = req.headers['cookie']
-    if (!header)
-        return null
+    let cookieHeaderValue = req.headers['cookie']
+    if (!cookieHeaderValue)
+        return new Session()
 
-    header = header.split(listSeparator)
-    const cookies = {};
-    for (let cookie of header) {
-        cookie = cookie.split(nameValueSeparator)
-        cookies[cookie[0]] = cookie[1]
-    }
+    let start = cookieHeaderValue.indexOf(sid)
+    if (-1 === start)
+        return new Session()
 
-    return new Session(cookies, resp);
+    let end = cookieHeaderValue.indexOf(listSeparator, start + sidLength)
+    if (-1 === end)
+        end = cookieHeaderValue.length
+
+    start = cookieHeaderValue.lastIndexOf(nameValueSeparator, end)
+    if (-1 === start)
+        return new Session()
+
+    cookieHeaderValue = cookieHeaderValue.slice(start + 1, end).trim()
+    const session = sessions[cookieHeaderValue]
+    if (!session)
+        return new Session()
+
+    return session
 }

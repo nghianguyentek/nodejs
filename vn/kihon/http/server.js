@@ -1,6 +1,6 @@
 const badReqDesc = Buffer.from('Bad Request');
 
-function writeResp(resp, data) {
+function writeResponse(resp, data) {
     resp.on('error', err => console.log(err))
 
     resp.statusCode = data.code
@@ -26,7 +26,7 @@ function HTTPServer() {
 
         req.on('data', data => reqData.push(data))
             .on('end', () => {
-                if (resp.complete)
+                if (resp)
                     return
 
                 if (!req.complete) {
