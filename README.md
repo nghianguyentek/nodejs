@@ -9,3 +9,11 @@ Node.js is a runtime environment to execute JavaScript (and TypeScript). We need
 - [Data type](data-type.md)
 - [Module](module.md)
 - [Scope](scope.md)
+
+## Working with the \`node\` command
+
+### Get installed Node.js version
+
+```shell
+node -v
+```

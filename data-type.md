@@ -36,7 +36,7 @@ a [variable](variable.md) name. A statement is a unit of code representing a com
 a [variable declaration, an assignment](variable.md#declare-and-assign-variables), etc. Sometimes, an expression is also
 a statement; for example, a [function call](function.md#call-a-function).
 
-```
+```js
 `This is the first line
 This is the second line
 This is the last line`
@@ -65,7 +65,7 @@ that `function` is an `object` type having the callable characteristic.
 
 An `object` is a collection of key-value pairs. Since a value can be any type, we call the pair whose value is a function, a method, and other pairs, properties of the object. We declare an empty object using the object literal, `{}`.
 
-```
+```js
 const obj = {};
 obj.propertyName = 1;
 obj.methodName = function() { ... };
@@ -73,5 +73,30 @@ obj.methodName = function() { ... };
 
 ## User-defined (custom) types
 
-Whenever we define a [function](function.md), we create a new `function` type (it's also a new `object` type). And we
+Whenever we define a [function](function.md), we create a new `function` subtype (it's also a new `object` subtype). And we
 called them user-defined (custom) types.
+
+```js
+function MyType() {
+    this.publicProperty1 = 'propertyValue';
+    this.publicMethod1 = () => { 
+        console.log('A method of MyType'); 
+    }
+}
+```
+
+After defining our `MyType` custom type, we can [declare a variable](variable.md#declare-and-assign-variables), `myTypeObj`, then initialize a new `MyType` object, and assign it to `myTypeObj`.
+
+```js
+const myTypeObj = new MyType();
+```
+
+Now, we can get and set the value of `publicProperty1` and call the `publicMethod1()` method from `myTypeObj`.
+
+```js
+console.log(`myTypeObj.publicProperty1=${myTypeObj.publicProperty1}`);
+myTypeObj.publicProperty1 = 'newValue';
+console.log(`myTypeObj.publicProperty1=${myTypeObj.publicProperty1}`);
+
+myTypeObj.publicMethod1();
+```

@@ -11,7 +11,7 @@ declaration. In addition, after declaring a variable using the `let` keyword, if
 value, [`undefined`](data-type.md#undefined-type) is set. Since every variable has a value, we can assign a variable to
 another variable (the value of another variable).
 
-```
+```fs
 const secondsPerMinute = 60, minutesPerHour = secondsPerMinute;
 
 let name = 'JavaScript Quick Guides';

@@ -4,7 +4,7 @@ In Node.js, each `.js` file is a module into which we group our related [functio
 
 For example, `http` is a Node.js built-in module that exposes the `createServer` function for us to create an HTTP server. The below codes shows how to load the `http` module and call the `createServer` from it:
 
-```
+```fs
 const http = require('node:http');
 http.createServer(...);
 ```
