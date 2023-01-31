@@ -54,3 +54,18 @@ or in lambda form
 ```fs
 ([parameterName, ...]) => { ... [return ...;] }
 ```
+
+## `this` keyword
+
+In a "normal" function, `this` refers to the caller. On the other hand, in an anonymous one, `this` refers to itself.
+
+```js
+const obj = { a: 'a' }
+obj.showMe = function() { console.log(this.a) }  // a
+obj.showYourself = () => { console.log(this.a) }  // undefined
+obj.showYourself2 = () => { this.a = 'b'; console.log(this.a) }  // b
+```
+
+Note that the `a` property in the `showYourself2()` method (i.e., an anonymous function) belongs to the method (not the `a` property of the `obj` object).
+
+

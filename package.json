@@ -1,12 +1,8 @@
 {
     "scripts": {
-        "test": "jest --coverage"
+        "test": "jest"
     },
     "devDependencies": {
-        "jest": "^29.4.1",
-        "jest-sonar-reporter": "^2.0.0"
-    },
-    "jest": {
-        "testResultsProcessor": "jest-sonar-reporter"
-      }
+        "jest": "^29.4.1"
+    }
 }

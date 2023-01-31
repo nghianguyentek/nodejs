@@ -71,6 +71,12 @@ obj.propertyName = 1;
 obj.methodName = function() { ... };
 ```
 
+### array type
+
+An `array` is an object that can hold a list of items. 
+
+[Read more...](array.md)
+
 ## User-defined (custom) types
 
 Whenever we define a [function](function.md), we create a new `function` subtype (it's also a new `object` subtype). And we

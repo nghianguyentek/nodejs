@@ -10,10 +10,16 @@ Node.js is a runtime environment to execute JavaScript (and TypeScript). We need
 - [Module](module.md)
 - [Scope](scope.md)
 
-## Working with the \`node\` command
+## Working with the `node` command
 
 ### Get installed Node.js version
 
-```shell
-node -v
-```
+`node -v`
+
+### Run a script
+
+`node script_path`
+
+## Working with npm
+
+- [npm basic](npm.md)
