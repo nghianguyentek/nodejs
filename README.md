@@ -23,3 +23,7 @@ Node.js is a runtime environment to execute JavaScript (and TypeScript). We need
 ## Working with npm
 
 - [npm basic](npm.md)
+
+## Testing with Jest framework
+
+- [jest basic](test.md)

@@ -1,10 +1,8 @@
-# Testing
+# Testing with Jest framework
 
 ## Installation
 
-```
-npm install -D jest
-```
+`npm install -D jest`
 
 ## Configuration
 
@@ -13,10 +11,7 @@ Update your the `package.json` file as below:
 ```json
 {
     "scripts": {
-        "test": "jest --coverage"
-    },
-    "jest": {
-        "testResultsProcessor": "jest-sonar-reporter"
+        "test": "jest"
     }
 }
 ```
@@ -55,11 +50,9 @@ test('test_case_name', () => {
     - Error detection
         - `toThrow(errorMessage)`
 
-## Run test
-
-`npm test`
-
 ## Compose a feature test
+
+To group related test cases together, we can use the `describe()`
 
 ```js
 describe('feature_name', () => {
@@ -70,3 +63,7 @@ describe('feature_name', () => {
     ...
 })
 ```
+
+## Run test
+
+`npm test`
