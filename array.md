@@ -1,2 +1,2 @@
-# Arrays in JavaScript
+# Arrays
 

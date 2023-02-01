@@ -1,4 +1,4 @@
-# Scopes in JavaScript
+# Scopes
 
 Every identifier (variable, function, etc.) has a scope where we can use them after declaration. In JavaScript, we have:
 

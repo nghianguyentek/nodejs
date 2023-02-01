@@ -1,4 +1,4 @@
-# Functions in Node.js
+# Functions
 
 A function is a way to organize our code to do a particular job. Generally, it often has a name, a list of parameters,
 and a body (i.e., a block of code) that always returns a value if executed. As variable, we must declare it before use (
@@ -8,7 +8,7 @@ Function parameters enable us to transfer outside values (input) into a function
 
 ## Declare a function
 
-```fs
+```js
 function functionName([parameterName, ...]) {
     ...
     [return ...;]
@@ -19,7 +19,7 @@ The content between `[` and `]` is optional.
 
 ## Call a function
 
-```fs
+```js
 functionName([argument, ...]);
 ```
 
@@ -28,7 +28,7 @@ An argument is an actual value transferred to a function parameter at runtime.
 Since every function is a `function` value, we can assign them to variables or parameters (as arguments). In those
 cases, we can call them using the names of variables or parameters instead.
 
-```fs
+```js
 function logError(str) {
     console.log(`Error: ${str}`);
 }
@@ -42,7 +42,7 @@ errorHandler('Division by zero');
 An anonymous function is a function that has no name (and the script engine will generate it). We often use them as
 arguments for another one or in case of running only once after declared.
 
-```fs
+```js
 (function ([parameterName, ...]) {
     ...
     [return ...;]
@@ -51,7 +51,7 @@ arguments for another one or in case of running only once after declared.
 
 or in lambda form
 
-```fs
+```js
 ([parameterName, ...]) => { ... [return ...;] }
 ```
 

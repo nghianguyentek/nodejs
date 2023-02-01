@@ -8,7 +8,7 @@ From v18.x LTS, Node.js supports a built-in test runner. Unfortunately, our host
 
 ## Configuration
 
-Update your the `package.json` file as below:
+Update your `package.json` file as below:
 
 ```json
 {
@@ -52,7 +52,7 @@ test('test_case_name', () => {
     - Error detection
         - `toThrow(errorMessage)`
 
-## Compose a feature test
+## Compose a test suite
 
 To group related test cases together, we can use the `describe()`
 

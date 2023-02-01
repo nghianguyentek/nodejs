@@ -1,4 +1,4 @@
-# Data types in Node.js
+# Data Types
 
 A data type is a named group of data characteristics; for example, numbers and sequences of characters (i.e., strings).
 In JavaScript, we have two data type groups: [simple (primitive)](#common-primitive-types)
