@@ -1,8 +1,8 @@
-# Node.js Quick Guides
+# Node.js
 
 Node.js is a runtime environment to execute JavaScript (and TypeScript). We need to install it on the target machine (for local development, it's your laptop). If you plan to deploy your application on a hosting, check with the provider the version they support.
 
-## JavaScript in Node.js quick guides
+## JavaScript quick guides
 
 - [Variable](variable.md)
 - [Function](function.md)
@@ -10,20 +10,9 @@ Node.js is a runtime environment to execute JavaScript (and TypeScript). We need
 - [Module](module.md)
 - [Scope](scope.md)
 
-## Working with the `node` command
+## Node.js quick guides
 
-### Get installed Node.js version
-
-`node -v`
-
-### Run a script
-
-`node script_path`
-
-## Working with npm
-
-- [npm basic](npm.md)
-
-## Testing with Jest framework
-
-- [jest basic](test.md)
+- [Running a script](run-scripts.md)
+- [Debugging](debug.md)
+- [Packages and npm](npm.md)
+- [Testing](test.md)

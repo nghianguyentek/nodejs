@@ -1,4 +1,4 @@
-# npm (Node.js Package Manager)
+# Packages and npm (Node.js Package Manager)
 
 ## What is a Node.js package?
 

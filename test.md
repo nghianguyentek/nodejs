@@ -1,4 +1,6 @@
-# Testing with Jest framework
+# Testing in Node.js
+
+From v18.x LTS, Node.js supports a built-in test runner. Unfortunately, our hosting provider may not support it. Therefore, we will use a test framework as a workaround solution, particularly the Jest framework.
 
 ## Installation
 
