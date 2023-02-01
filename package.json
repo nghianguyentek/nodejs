@@ -1,6 +1,11 @@
 {
-    "name": "vn_kihon_http",
+    "name": "vn-kihon-http",
     "version": "0.0.0",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nghianguyentek/nodejs.git"
+    },
     "scripts": {
         "test": "jest"
     },

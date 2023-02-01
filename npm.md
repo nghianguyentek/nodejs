@@ -9,11 +9,18 @@ It's a directory containing a `package.json` file and is considered a Node.js pr
 {
     "name": "vn_kihon_http",
     "version": "0.0.0",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nghianguyentek/nodejs.git"        
+    },
     "scripts": {
+        "test": "jest"
     }
     "dependencies": {
     },
     "devDependencies": {
+        "jest": "^29.4.1"
     }
 }
 ```

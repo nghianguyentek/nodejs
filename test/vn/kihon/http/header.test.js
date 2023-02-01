@@ -50,7 +50,7 @@ describe('testGetUserAgent', () => {
         expect(ret[retPropNames[1]]).toMatch(platform)
     })
 
-    test.only('has brand has platform', () => {
+    test('has brand has platform', () => {
         const brand = 'Microsoft Edge',
             brandVersion = '109',
             platform = 'Windows NT 10.0; Win64; x64',
