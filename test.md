@@ -52,7 +52,7 @@ test('test_case_name', () => {
     - Error detection
         - `toThrow(errorMessage)`
 
-## Compose a test suite
+## Group test cases
 
 To group related test cases together, we can use the `describe()`
 
