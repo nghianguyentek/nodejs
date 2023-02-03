@@ -69,3 +69,17 @@ describe('feature_name', () => {
 ## Run test
 
 `npm test`
+
+## Verbose
+
+If there are many test files (suites), Jest will not display the detail of each suite. To enable this, we use the `verbose` configuration. 
+
+Update your `package.json` file as below:
+
+```json
+{
+    "jest": {
+        "verbose": true
+    }
+}
+```
