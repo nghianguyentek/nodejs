@@ -1,15 +1,46 @@
-const COOKIE_HEADER = 'cookie'
+const COOKIE_HEADER = 'cookie',
+    SET_COOKIE_HEADER = 'Set-Cookie'
 
 const securePart = ';Secure',
     httpOnlyPart = ';HttpOnly',
     listSeparator = '; ',
     nameValueSeparator = '='
 
+function Cookie(name, value, secure = true, httpOnly = true) {
+    this.getName = () => name
+    this.getValue = () => value
+    this.toHeaderValue = () => {
+        let ret = name + '=' + value
+        if (secure)
+            ret += securePart
+
+        if (httpOnly)
+            ret += httpOnlyPart
+
+        return ret
+    }
+
+    Object.freeze(this)
+}
+
+Cookie.from = cookieStr => {
+    if (!cookieStr)
+        return null
+
+    const nameValuePair = cookieStr.split(nameValueSeparator)
+    if (2 !== nameValuePair.length)
+        return null
+
+    return new Cookie(nameValuePair[0], nameValuePair[1])
+}
+
 function Cookies() {
     const cookies = {}
 
-    this.addCookie = (name, value) => cookies[name] = new Cookie(name, value)
+    this.addCookie = cookie => cookies[cookie.getName()] = cookie
     this.getCookieByName = name => cookies[name]
+
+    Object.freeze(this)
 }
 
 Cookies.from = req => {
@@ -29,36 +60,10 @@ Cookies.from = req => {
             continue
         }
 
-        cookies[cookie.getName()] = cookie
+        cookies.addCookie(cookie)
     }
 
     return cookies
 }
 
-function Cookie(name, value, secure = true, httpOnly = true) {
-    this.getName = () => name
-    this.getValue = () => value
-    this.toHeaderValue = () => {
-        let ret = name + '=' + value
-        if (secure)
-            ret += securePart
-            
-        if (httpOnly)
-            ret += httpOnlyPart
-
-        return ret
-    }
-}
-
-Cookie.from = cookieStr => {
-    if (!cookieStr)
-        return null
-    
-    const nameValuePair = cookieStr.split(nameValueSeparator)
-    if (2 !== nameValuePair.length)
-        return null
-
-    return new Cookie(nameValuePair[0], nameValuePair[1])
-}
-
-module.exports = { COOKIE_HEADER, Cookies, Cookie }
+module.exports = { COOKIE_HEADER, SET_COOKIE_HEADER, Cookies, Cookie }

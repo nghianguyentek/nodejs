@@ -1,72 +1,57 @@
-let sid = 'sid',
-    secure = true,
-    httpOnly = true,
-    sidLength = sid.length + 1
+const { SET_COOKIE_HEADER, Cookies } = require('./cookie')
 
-function generateHeaderValue(id) {
-    let headerValue = `${sid}=${id}`
+const SESSION_ID_NAME = 'sid'
 
-    if (secure)
-        headerValue += securePart
+const sessions = {}
 
-    if (httpOnly)
-        headerValue += httpOnlyPart
-
-    return headerValue
-}
-
-function generateSessionId() {
-    return Date.now().toString();
-}
-
-let sessionIdGenerator = generateSessionId,
-    headerValueGenerator = generateHeaderValue
-
-const sessions = {},
-    securePart = ';Secure',
-    httpOnlyPart = ';HttpOnly',
-    listSeparator = ';',
-    nameValueSeparator = '='
+let counter = 0
 
 function Session(id) {
-    let isNew = id === undefined,
-        data = {}
-
-    if (isNew) {
-        id = sessionIdGenerator()
+    let _isNew, data = {}
+    if (!id) {
+        id = Date.now().toString() + (++counter).toString()
         sessions[id] = this
+        _isNew = true
     }
 
-    this.isNew = () => isNew
     this.getId = () => id
-    this.getHeaderValue = () => headerValueGenerator(id)
+    this.isNew = () => _isNew
+    this.isExpired = () => false
+
+    this.putData = (name, value) => data[name] = value
+    this.getData = name => data[name]
+
     this.renew = () => {
-        isNew = true
+        _isNew = true
         data = {}
     }
+
+    this.respond = resp => {
+        resp.setHeader(SET_COOKIE_HEADER, id)
+        _isNew = false
+    }
+
+    if (_isNew)
+        Object.freeze(this)
 }
 
-exports.from = req => {
-    let cookieHeaderValue = req.headers['cookie']
-    if (!cookieHeaderValue)
+Session.from = req => {
+    const cookies = Cookies.from(req)
+    if (!cookies)
         return new Session()
 
-    let start = cookieHeaderValue.indexOf(sid)
-    if (-1 === start)
+    const cookie = cookies.getCookieByName(SESSION_ID_NAME)
+    if (!cookie)
         return new Session()
 
-    let end = cookieHeaderValue.indexOf(listSeparator, start + sidLength)
-    if (-1 === end)
-        end = cookieHeaderValue.length
-
-    start = cookieHeaderValue.lastIndexOf(nameValueSeparator, end)
-    if (-1 === start)
-        return new Session()
-
-    cookieHeaderValue = cookieHeaderValue.slice(start + 1, end).trim()
-    const session = sessions[cookieHeaderValue]
+    const session = sessions[cookie.getValue()]
     if (!session)
         return new Session()
 
+    if (session.isExpired())
+        session.renew()
+
     return session
 }
+
+module.exports = { SESSION_ID_NAME, Session }

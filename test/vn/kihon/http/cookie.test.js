@@ -1,10 +1,9 @@
 const { COOKIE_HEADER, Cookies, Cookie } = require('../../../../vn/kihon/http/cookie')
-const { UserAgent } = require('../../../../vn/kihon/http/user-agent')
 
 describe('Cookies test cases', () => {
     test('null data', () => {
-        expect(Cookies.from()).toBeNull()
-        expect(Cookies.from({ headers: {} })).toBeNull()
+        expect(Cookies.from()).toBeFalsy()
+        expect(Cookies.from({ headers: {} })).toBeFalsy()
     })
 
     test('valid data with warning', () => {
@@ -13,9 +12,9 @@ describe('Cookies test cases', () => {
         
         const cookies = Cookies.from(req)
 
-        expect(cookies).not.toBeNull()
-        expect(cookies['HSID']).not.toBeNull()
-        expect(cookies['HSID'].getValue()).toMatch('AHUSIISYDeij0dAI7')
+        expect(cookies).toBeTruthy()
+        expect(cookies.getCookieByName('HSID')).toBeTruthy()
+        expect(cookies.getCookieByName('HSID').getValue()).toMatch('AHUSIISYDeij0dAI7')
     })
 
     test('valid data', () => {
@@ -24,9 +23,9 @@ describe('Cookies test cases', () => {
         
         const cookies = Cookies.from(req)
 
-        expect(cookies).not.toBeNull()
-        expect(cookies['HSID']).not.toBeNull()
-        expect(cookies['HSID'].getValue()).toMatch('AHUSIISYDeij0dAI7')
+        expect(cookies).toBeTruthy()
+        expect(cookies).toBeTruthy()
+        expect(cookies.getCookieByName('HSID').getValue()).toMatch('AHUSIISYDeij0dAI7')
     })
 
     test('<= 1ms', () => {
@@ -44,9 +43,9 @@ describe('Cookies test cases', () => {
 describe('Cookie test cases', () => {
     test('valid data', () => {
         const cookie = new Cookie('name', 'value')
-        expect(cookie.getName).not.toBeNull()
-        expect(cookie.getValue).not.toBeNull()
-        expect(cookie.toHeaderValue).not.toBeNull()
+        expect(cookie.getName).toBeTruthy()
+        expect(cookie.getValue).toBeTruthy()
+        expect(cookie.toHeaderValue).toBeTruthy()
 
         expect(cookie.getName()).toMatch('name')
         expect(cookie.getValue()).toMatch('value')

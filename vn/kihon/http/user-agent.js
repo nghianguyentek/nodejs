@@ -81,6 +81,8 @@ function UserAgent(brand = null, brandVersion = null, platform = null) {
 
         return true
     }
+
+    Object.freeze(this)
 }
 
 UserAgent.from = req => {

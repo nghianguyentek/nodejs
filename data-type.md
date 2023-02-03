@@ -84,25 +84,27 @@ called them user-defined (custom) types.
 
 ```js
 function MyType() {
-    this.publicProperty1 = 'propertyValue';
+    this.publicProperty1 = 'propertyValue'
     this.publicMethod1 = () => { 
-        console.log('A method of MyType'); 
+        console.log('A method of MyType')
     }
+    
+    Object.freeze(this)
 }
 ```
 
 After defining our `MyType` custom type, we can [declare a variable](variable.md#declare-and-assign-variables), `myTypeObj`, then initialize a new `MyType` object, and assign it to `myTypeObj`.
 
 ```js
-const myTypeObj = new MyType();
+const myTypeObj = new MyType()
 ```
 
 Now, we can get and set the value of `publicProperty1` and call the `publicMethod1()` method from `myTypeObj`.
 
 ```js
-console.log(`myTypeObj.publicProperty1=${myTypeObj.publicProperty1}`);
-myTypeObj.publicProperty1 = 'newValue';
-console.log(`myTypeObj.publicProperty1=${myTypeObj.publicProperty1}`);
+console.log(`myTypeObj.publicProperty1=${myTypeObj.publicProperty1}`)
+myTypeObj.publicProperty1 = 'newValue'
+console.log(`myTypeObj.publicProperty1=${myTypeObj.publicProperty1}`)
 
-myTypeObj.publicMethod1();
+myTypeObj.publicMethod1()
 ```
