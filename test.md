@@ -29,27 +29,22 @@ test('test_case_name', () => {
 ```
 
 - `a_criterion_function` can be one of the following:
-    - Objects comparation
-        - `toBe(value)`: `===`
-        - `toStrictEquals(value)`: `==`
-        - `toBeNull()`: `=== null`
-        - `toBeUndefined()`: `=== undefined`
-        - `toBeDefined()`: `!== undefined`
+    - Expect an logical result
         - `toBeTruthy()`: `if`
         - `toBeFalsy()`: `unless`
 
-    - Numbers comparation
+    - Expect number comparison
         - `toBe(inteterNumber)` or `toBeCloseTo(floatNumber)`
         - `toBeGreaterThan(number)`
         - `toBeGreaterThanOrEqual(number)`
         - `toBeLessThan(number)`
         - `toBeLessThanOrEqual(number)`
-    - Strings comparation
+    - Expect strings matched
         -  `toMatch(/regex/)`
         - `not.toMath(/regex/)`
-    - Array item existance
+    - Expect an array item existed
         - `toContain(value)`
-    - Error detection
+    - Expect an error occurred
         - `toThrow(errorMessage)`
 
 ## Group test cases
