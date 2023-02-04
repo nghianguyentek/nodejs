@@ -3,7 +3,9 @@ const BRAND_HEADER = 'sec-ch-ua',
 
 const platformHeader = 'sec-ch-ua-platform',
     itemSeparator = ',',
-    brandVersionSeparator = '";v="'
+    brandVersionSeparator = '";v="',
+    systemInfoPrefix = '(',
+    systemInfoSuffix = ')'
 
 function getBrand(req) {
     const headerValue = req.headers[BRAND_HEADER];
@@ -40,7 +42,7 @@ function getPlatform(req) {
         
     let start = headerValue.indexOf(systemInfoPrefix, 12);
     if (-1 === start) {
-        queueMicrotask(console.info(`Unrecognized 'user-agent' header pattern '${headerValue}'`))
+        queueMicrotask(() => console.info(`Unrecognized 'user-agent' header pattern '${headerValue}'`))
         return null
     }
 
@@ -61,22 +63,22 @@ function UserAgent(brand = null, brandVersion = null, platform = null) {
         if (!(other instanceof UserAgent))
             return false
         
-        if ((!brand && other.brand) || (brand && !other.brand))
+        if ((!brand && other.getBrand()) || (brand && !other.getBrand()))
             return false
 
-        if (brand && other.brand && brand !== other.brand)
+        if (brand && other.getBrand() && brand !== other.getBrand())
             return false
 
-        if ((!brandVersion && other.brandVersion) || (brandVersion && !other.brandVersion))
+        if ((!brandVersion && other.getBrandVersion()) || (brandVersion && !other.getBrandVersion()))
             return false
 
-        if (brandVersion && other.brandVersion && brandVersion !== other.brandVersion)
+        if (brandVersion && other.getBrandVersion() && brandVersion !== other.getBrandVersion())
             return false
 
-        if ((!platform && other.platform) || (platform && !other.platform))
+        if ((!platform && other.getPlatform()) || (platform && !other.getPlatform()))
             return false
 
-        if (platform && other.platform && platform !== other.platform)
+        if (platform && other.getPlatform() && platform !== other.getPlatform())
             return false
 
         return true
@@ -98,4 +100,4 @@ UserAgent.from = req => {
     return new UserAgent(null, null, platform)
 }
 
-module.exports = { UserAgent }
+module.exports = { BRAND_HEADER, AGENT_HEADER, UserAgent }
