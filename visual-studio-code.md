@@ -2,6 +2,9 @@
 
 ## Installation
 
+1. Go to [Visual Studio Code homepage](https://code.visualstudio.com/), and download an appropriate installer.
+2. Start coding
+
 ## Searching
 
 ### Find files by a particular name

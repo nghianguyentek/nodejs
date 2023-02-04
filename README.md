@@ -19,3 +19,7 @@ Node.js is a runtime environment to execute JavaScript (and TypeScript). We need
 - [Debugging](debug.md)
 - [Packages and npm](npm.md)
 - [Testing](test.md)
+
+## IDE
+
+- [Visual Studio Code](visual-studio-code.md)
