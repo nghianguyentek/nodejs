@@ -1,3 +1,5 @@
+const { Session } = require('./session')
+
 const badReqDesc = Buffer.from('Bad Request');
 
 function writeResponse(resp, data) {
@@ -37,7 +39,7 @@ function HTTPServer() {
                 reqData = Buffer.concat(reqData);
 
                 if (useSession)
-                    session = require('./session').from(req);
+                    session = Session.from(req);
                 
             })
     });
