@@ -2,7 +2,7 @@
 
 ## What is a Node.js package?
 
-It's a directory containing a `package.json` file and is considered a Node.js project. The `package.json` file contains package (project) information, such as package name, package version, main entry point, dependent packages (aka dependencies), and test scripts.
+It's a directory containing a `package.json` file and is considered a Node.js project. The `package.json` is a text file contains package (project) information, such as package name, package version, main entry point, dependent packages (aka dependencies), and test scripts.
 
 *Sample package.json*
 ```json
@@ -27,7 +27,7 @@ It's a directory containing a `package.json` file and is considered a Node.js pr
 
 ## What is npm?
 
-npm is the default package manager for Node.js. Node.js includes it, so we could use it (the `npm` command) after installing Node.js.
+npm is the default package manager for Node.js. Node.js includes it by default, so we could use it (the `npm` command) after installing Node.js.
 
 ## What does npm use for?
 

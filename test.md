@@ -23,29 +23,29 @@ Update your `package.json` file as below:
 ```js
 
 test('test_case_name', () => {
-    expect(expression).a_criterion_function(...)
+    expect(expression).a_criterion_function()
 })
 
 ```
 
-- `a_criterion_function` can be one of the following:
-    - Expect an logical result
-        - `toBeTruthy()`: `if`
-        - `toBeFalsy()`: `unless`
+Based on the type of the value of the given `expression`, we have different criterion functions. If it is:
 
-    - Expect number comparison
-        - `toBe(inteterNumber)` or `toBeCloseTo(floatNumber)`
-        - `toBeGreaterThan(number)`
-        - `toBeGreaterThanOrEqual(number)`
-        - `toBeLessThan(number)`
-        - `toBeLessThanOrEqual(number)`
-    - Expect strings matched
-        -  `toMatch(/regex/)`
-        - `not.toMath(/regex/)`
-    - Expect an array item existed
-        - `toContain(value)`
-    - Expect an error occurred
-        - `toThrow(errorMessage)`
+- A boolean
+    - `toBeTruthy()`
+    - `toBeFalsy()`
+- A number
+    - `toBe(inteterNumber)` or `toBeCloseTo(floatNumber)`
+    - `toBeGreaterThan(number)`
+    - `toBeGreaterThanOrEqual(number)`
+    - `toBeLessThan(number)`
+    - `toBeLessThanOrEqual(number)`
+- A string
+    -  `toMatch(/regex/)`
+    - `not.toMath(/regex/)`
+- An array
+    - `toContain(value)`
+- An error
+    - `toThrow(errorMessage)`
 
 ## Group test cases
 
