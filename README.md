@@ -11,6 +11,7 @@ Node.js is a runtime environment to execute JavaScript (and TypeScript). We need
 - [Data type](data-type.md)
 - [Module](module.md)
 - [Scope](scope.md)
+- [Loop](loop.md)
 
 ## Node.js quick guides
 
