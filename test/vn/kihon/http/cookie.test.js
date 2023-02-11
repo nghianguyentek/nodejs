@@ -63,4 +63,30 @@ describe('Cookie test cases', () => {
         end = Date.now()
         expect(end - start).toBeLessThanOrEqual(1)
     })
+
+    const times = 10000,
+        expectedWorkload = 1000,  // times/ms
+        expectedDuration = Math.floor(times / expectedWorkload)
+
+    test(`${times} times initializations <= ${expectedDuration}ms`, () => {
+        let start = Date.now()
+        for (let i = 0; i < times; i++)
+            new Cookie('name', 'value')
+
+        let end = Date.now()
+        expect(end - start).toBeLessThanOrEqual(expectedDuration)
+    })
+
+    test(`${times} times header value conversions <= ${expectedDuration}ms`, () => {
+        const cookies = []
+        for (let i = 0; i < times; i++)
+            cookies.push(new Cookie('name', 'value'))
+        
+        let start = Date.now()
+        for (let i = 0; i < times; i++)
+            cookies[i].toHeaderValue()
+
+        let end = Date.now()
+        expect(end - start).toBeLessThanOrEqual(expectedDuration)
+    })
 })
