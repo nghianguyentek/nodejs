@@ -18,11 +18,11 @@ Update your `package.json` file as below:
 }
 ```
 
-## Compose a simple test
+## Compose a simple test case
 
 ```js
 
-test('test_case_name', () => {
+test('case_name', () => {
     expect(expression).a_criterion_function()
 })
 
@@ -52,7 +52,7 @@ Based on the type of the value of the given `expression`, we have different crit
 To group related test cases together, we can use the `describe()`
 
 ```js
-describe('feature_name', () => {
+describe('group_name', () => {
     test('case_name', () => {
 
     })
