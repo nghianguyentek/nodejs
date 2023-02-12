@@ -17,7 +17,7 @@
 
 ## Node.js debugging
 
-1. Press `Ctrl + Shift + P` to show all support command
+1. Press `Ctrl + Shift + P` to show all support commands
 2. Choose `Debug: Toggle Auto Attach`
 3. Choose `Only With Flag`
 4. Type `exit` in the current Terminal if opening.
