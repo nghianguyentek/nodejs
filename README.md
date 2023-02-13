@@ -4,7 +4,7 @@
 
 Although JavaScript is a general-purpose programming language, we use it primarily in web projects (front-end, back-end, or even both). In this learning project, we will discover JavaScript and Node.js, a JavaScript runtime environment (i.e., we use it to execute our JavaScript codes).
 
-First, we start with the [preliminaries](#preliminaries) section to prepare the development environment. After that, if you are new to programming and JavaScript, shake yourself in the [Javascript introduction](#javascript-introduction) section. Finally, look at the [Node.js a bit more](#nodejs-a-bit-more) section for some essential topics, such as debugging and testing.
+First, we start with the [preliminaries](#preliminaries) section to prepare the development environment. After that, if you are new to programming and JavaScript, shake yourself in the [Javascript introduction](#javascript-introduction) section; skip it otherwise. Finally, look at the [Node.js a bit more](#nodejs-a-bit-more) part for some essential topics, such as debugging and testing.
 
 ## Preliminaries
 
