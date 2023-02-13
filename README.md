@@ -1,17 +1,21 @@
 ![Test](https://github.com/nghianguyentek/nodejs/actions/workflows/node.js.yml/badge.svg)
 
-# Node.js Introduction
+# JavaScript and Node.js
 
-Node.js is a runtime environment to execute JavaScript (and TypeScript). We need to install it on the target machine (for local development, it's your laptop). If you plan to deploy your application on a hosting, check with the provider the version they support.
+Although JavaScript is a general-purpose programming language, we use it primarily in web projects (front-end, back-end, or even both). In this learning project, we will discover JavaScript and Node.js, a JavaScript runtime environment (i.e., we use it to execute our JavaScript codes).
+
+First, we start with the [preliminaries](#preliminaries) section to prepare the development environment. After that, if you are new to programming and JavaScript, shake yourself in the [Javascript introduction](#javascript-introduction) section. Finally, look at the [Node.js a bit more](#nodejs-a-bit-more) section for some essential topics, such as debugging and testing.
 
 ## Preliminaries
 
-- [Install Node.js](install.md)
-- [Install Visual Studio Code](visual-studio-code.md#installation)
-- [Start coding in Visual Studio Code](visual-studio-code.md#start-coding)
-- [Running a script](run-scripts.md)
+Before playing with JavaScript, we need to install [Node.js](install.md) and [Visual Studio Code](visual-studio-code.md#installation), a powerful and free code editor. Then try to [compose a first script](visual-studio-code.md#start-coding) and [execute it](run-scripts.md).
 
-## JavaScript quick guides
+- [Install Node.js guide](install.md)
+- [Install Visual Studio Code guide](visual-studio-code.md#installation)
+- [Start coding in Visual Studio Code](visual-studio-code.md#start-coding)
+- [Run a script](run-scripts.md)
+
+## JavaScript introduction
 
 - [Variable](variable.md)
 - [Function](function.md)
