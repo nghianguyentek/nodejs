@@ -2,8 +2,17 @@
 
 ## Installation
 
-1. Go to [Visual Studio Code homepage](https://code.visualstudio.com/), and download an appropriate installer.
-2. Start coding
+Go to [Visual Studio Code homepage](https://code.visualstudio.com/), and download an appropriate installer.
+
+## Start coding
+
+1. Press `Ctrl + Shift + E` to active `Explorer`.
+2. Click `Open Folder` and select the directory (i.e., folder) you want to store your source files.
+3. On the `Explorer` panel, click the new file icon ![new-file](imgs/new-file.png), fill the file name, for example, `sample.js`, and then press `Enter`. 
+
+Visual Studio Code will open the file to the main editor region, and you can start your coding.
+
+*To open the `Terminal`, press `Ctrl + J`.*
 
 ## Searching
 
