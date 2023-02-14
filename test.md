@@ -25,7 +25,6 @@ Update your `package.json` file as below:
 test('case_name', () => {
     expect(expression).a_criterion_function()
 })
-
 ```
 
 Based on the type of the value of the given `expression`, we have different criterion functions. If it is:
