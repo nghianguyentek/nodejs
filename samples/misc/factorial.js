@@ -12,7 +12,7 @@ function validate(n) {
     throw new Error(`Expect a non-negative number, but got '${n}'`)
 }
 
-Factorial.of = n => {
+Factorial.of_v1 = n => {
   validate(n)
 
   if (0 === n || 1 === n)
@@ -20,6 +20,21 @@ Factorial.of = n => {
 
   return n * Factorial.of(n - 1)
 }
+
+Factorial.of_v2 = n => {
+  validate(n)
+
+  if (0 === n || 1 === n)
+    return 1
+
+  let result = n
+  for (let i = n-1; i > 1; i--)
+    result *= i
+
+  return result
+}
+
+Factorial.of = n => Factorial.of_v2(n)
 
 Factorial.approximate = n => {
   validate(n)
