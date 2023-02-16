@@ -12,39 +12,55 @@ Update your `package.json` file as below:
 
 ```json
 {
-    "scripts": {
-        "test": "jest"
-    }
+  "scripts": {
+    "test": "jest"
+  }
 }
 ```
 
 ## Compose a simple test case
 
 ```js
-
 test('case_name', () => {
-    expect(expression).a_criterion_function()
+  expect(expression).a_criterion_function()
 })
 ```
 
 Based on the type of the value of the given `expression`, we have different criterion functions. If it is:
 
-- A boolean
-    - `toBeTruthy()`
-    - `toBeFalsy()`
-- A number
-    - `toBe(inteterNumber)` or `toBeCloseTo(floatNumber)`
-    - `toBeGreaterThan(number)`
-    - `toBeGreaterThanOrEqual(number)`
-    - `toBeLessThan(number)`
-    - `toBeLessThanOrEqual(number)`
-- A string
-    -  `toMatch(/regex/)`
-    - `not.toMath(/regex/)`
-- An array
-    - `toContain(value)`
-- An error
-    - `toThrow(errorMessage)`
+### A boolean
+
+- `toBeTruthy()`
+- `toBeFalsy()`
+
+### A number
+
+- `toBe(inteterNumber)` or `toBeCloseTo(floatNumber)`
+- `toBeGreaterThan(number)`
+- `toBeGreaterThanOrEqual(number)`
+- `toBeLessThan(number)`
+- `toBeLessThanOrEqual(number)`
+
+### A string
+
+-  `toMatch(/regex/)`
+- `not.toMath(/regex/)`
+
+### An array
+
+- `toContain(value)`
+
+### An error
+
+- `toThrow()`
+- `toThrow(errorType)`
+- `toThrow(errorMessage)`
+
+*Note that: `expression` must be wrapped in an anonymous function*
+
+```js
+expect(() => expression).toThrow()
+```
 
 ## Group test cases
 
