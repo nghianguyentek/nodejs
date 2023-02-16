@@ -1,10 +1,12 @@
 function Factorial() {
-
 }
 
 function validate(n) {
   if (typeof n !== 'number')
     throw new TypeError(`Expect a non-negative number, but got '${typeof n}'`)
+
+  if (!Number.isInteger(n))
+  throw new TypeError(`Expect a non-negative number, but got 'float'`)
 
   if (n < 0)
     throw new Error(`Expect a non-negative number, but got '${n}'`)

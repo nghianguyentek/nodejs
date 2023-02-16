@@ -13,6 +13,7 @@ test('factorial:success', () => {
 describe('factorial:invalid', () => {
   test('factorial:invalid:type', () => {
     expect(() => Factorial.of('abc')).toThrow(TypeError)
+    expect(() => Factorial.of(6.2)).toThrow(TypeError)
   })
 
   test('factorial:invalid:value', () => {
