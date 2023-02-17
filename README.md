@@ -31,6 +31,16 @@ In programming, as in maths, we use a **variable** to represent a value. Like ty
 
 ## Playing with JavaScript and Node.js
 
+The previous section gives us some [basic programming concepts](#basic-programming-concepts). Now, we will see how they are in JavaScript and Node.js. First, we look at [primitive data types]() and supported operations on each of them. Then we will hand on with [variables and constants](variable.md). After that, we try to be familiar with [functions](function.md) and [flow control structures]() before improving our programs with [modules](module.md) and [scopes](scope.md). And finally, we will work hard with [complex data types]() to reach more realistic programs.
+
+- [Primitive data types guide](data-type.md)
+- [Variables and constants guide](variable.md)
+- [Functions guide](function.md)
+- [Flow control structures guide]()
+- [Modules guide](module.md)
+- [Scopes guide](scope.md)
+- [Complex data types guide]()
+
 ## Node.js a bit more
 
 - [Debugging](debug.md)

@@ -4,7 +4,7 @@ Understanding how our codes run is essential. In this section, I will give some 
 
 ## A standalone script
 
-*[sample-run.js](samples/sample-flow-01.js)*
+*[add.js](samples/flow/add.js)*
 
 ```js
 const a = 1,
@@ -22,7 +22,7 @@ console.log(add(a, b))
 *Terminal*
 
 ```sh
-node script01
+node add.js
 ```
 
 *Abstract execution flow*
