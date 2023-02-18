@@ -1,6 +1,6 @@
 const { Factorial } = require('./factorial')
 
-test('factorial:success', () => {
+test('factorial:of:success', () => {
   const n = 10,
     result = 3628800
 
@@ -16,13 +16,13 @@ test('factorial:success', () => {
     expect(result/approximatedValue).toBeCloseTo(1.005)
 })
 
-describe('factorial:invalid', () => {
-  test('factorial:invalid:type', () => {
+describe('factorial:of:invalid', () => {
+  test('factorial:of:invalid:type', () => {
     expect(() => Factorial.of('abc')).toThrow(TypeError)
     expect(() => Factorial.of(6.2)).toThrow(TypeError)
   })
 
-  test('factorial:invalid:value', () => {
+  test('factorial:of:invalid:value', () => {
     expect(() => Factorial.of(-2)).toThrow()
   })
 })

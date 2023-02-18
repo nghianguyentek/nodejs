@@ -35,7 +35,7 @@ function Session(id) {
         Object.freeze(this)
 }
 
-Session.from = req => {
+function from(req) {
     const cookies = Cookies.from(req)
     if (!cookies)
         return new Session()
@@ -54,4 +54,4 @@ Session.from = req => {
     return session
 }
 
-module.exports = { SESSION_ID_NAME, Session }
+module.exports = { SESSION_ID_NAME, from }

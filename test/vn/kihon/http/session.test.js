@@ -1,4 +1,4 @@
-const { SESSION_ID_NAME, Session } = require('../../../../vn/kihon/http/session'),
+const { SESSION_ID_NAME, from } = require('../../../../vn/kihon/http/session'),
     { COOKIE_HEADER } = require('../../../../vn/kihon/http/cookie')
 
 const dataName = 'dataName',
@@ -6,8 +6,8 @@ const dataName = 'dataName',
 
 let sessionId;
 
-test('new session', () => {
-    const session = Session.from()
+test('session:from:new', () => {
+    const session = from()
     expect(session.isNew()).toBeTruthy()
 
     sessionId = session.getId()
@@ -18,37 +18,37 @@ test('new session', () => {
     expect(session.getData(dataName)).toMatch(dataValue)
 })
 
-test('new session <= 1ms', () => {
+test('session:from:lessThan1ms', () => {
     const start = Date.now()
-    Session.from()
+    from()
     const end = Date.now()
     expect(end - start).toBeLessThanOrEqual(1)
 })
 
-test('current session', () => {
+test('session:from:existed', () => {
     const req = { headers: {} }
     req.headers[COOKIE_HEADER] = `${SESSION_ID_NAME}=${sessionId}`
 
-    const session = Session.from(req)
+    const session = from(req)
     expect(session.isNew()).toBeFalsy()
     expect(session.getData(dataName)).toMatch(dataValue)
 })
 
-test('current session <= 1ms', () => {
+test('session:from:existed:lessThan1ms', () => {
     const req = { headers: {} }
     req.headers[COOKIE_HEADER] = `${SESSION_ID_NAME}=${sessionId}`
 
     const start = Date.now()
-    Session.from(req)
+    from(req)
     const end = Date.now()
     expect(end - start).toBeLessThanOrEqual(1)
 })
 
-test('renew', () => {
+test('session:from:existed:then:renew', () => {
     const req = { headers: {} }
     req.headers[COOKIE_HEADER] = `${SESSION_ID_NAME}=${sessionId}`
 
-    const session = Session.from(req)
+    const session = from(req)
     expect(session.isNew()).toBeFalsy()
     expect(session.getData(dataName)).toMatch(dataValue)
 
@@ -57,11 +57,11 @@ test('renew', () => {
     expect(session.getData(dataName)).toBeFalsy()
 })
 
-test('renew <= 1ms', () => {
+test('session:from:existed:then:renew:lessThan1ms', () => {
     const req = { headers: {} }
     req.headers[COOKIE_HEADER] = `${SESSION_ID_NAME}=${sessionId}`
 
-    const session = Session.from(req)
+    const session = from(req)
 
     const start = Date.now()
     session.renew()

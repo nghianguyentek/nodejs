@@ -17,32 +17,34 @@ Before playing with JavaScript, we need to install [Node.js](install.md) and [Vi
 
 ## Basic programming concepts
 
-Programming is all about problems, algorithms, and programs. A **problem** is what we have to solve or want to archive. An **algorithm** is a sequence of steps we need to follow to solve a particular problem. And a **program** is an implementation of an algorithm. In a program, we express one algorithm step by one or more statements. Each **statement** is a complete action.
+As you may know, to create a program, we first write codes in text files (i.e., ***source codes***), and then use a ***compiler*** to ***compile*** them to ***binary files*** containing ***runnable machine codes*** that computers understand. However, these machine codes tie in the ***instruction sets*** of the CPU (Central Processing Unit) and even the OS (Operating System) of the computer we used to compile our source codes. That means the compiled executable files can run on similar systems only (***platform-specific***). Consequently, we must compile our program source codes on different platforms (e.g., x32, x64, Windows, Linux, etc.). Sometimes, worse, we must update our source code to make our programs run for a specific platform. Therefore, instead of compiling directly to machine codes, the compiler of some programming languages may generate ***bytecode*** files and use platform-specific ***interpreters*** to ***interpret*** them when executing the program to achieve ***portability***.
 
-When a problem is complex, we often use the divide-and-conquer strategy to split it into smaller and smaller parts until we can find the algorithm for each one, and thus we reach the algorithm for the problem. As a result, a complex program will be a collection of smaller programs. And small program can be represented as a **function** that receives inputs, processes them, and returns outputs.
+From a programmer's view, programming is all about problems, algorithms, and programs. A ***problem*** is what we want to solve or archive. An ***algorithm*** is a sequence of steps we need to follow to solve a particular problem. And a ***program*** is an implementation of an algorithm by using a particular ***programming language***. In a program, we express one algorithm step by one or more ***statements***, which each is a complete action.
 
-The inputs and outputs of a function are **data**. To differentiate data, we transform data into types and values. Each (data) **type** is a set of (data) **values** having the same characteristics; for example, the natural numbers set is a type, and we can say `NaturalNumber` and `N` is its name and identifier, respectively. Of course, we prefer a (common or general) **type name** rather than a (scientific) **type identifier** to identify a type.
+When a problem is complex, we often use the ***divide-and-conquer*** strategy to split it into smaller and smaller parts until we can find the algorithm for each one, and thus we reach the algorithm for the problem. As a result, a complex program will be a collection of smaller programs. And small program can be represented as a ***function*** that receives ***inputs***, processes them, and returns ***outputs***.
 
-**Data type** is a type and possible **operations** we can apply to its members; for example, natural numbers set is a data type, and we can operate additions, subtractions, etc. 
+The inputs and outputs of a function are ***data***. To differentiate data, we transform data into types and values. Each (data) ***type*** is a set of (data) ***values*** having the same characteristics; for example, the natural numbers set is a type, and we can say `NaturalNumber` and `N` is its name and identifier, respectively. Of course, we prefer a (common or general) ***type name*** rather than a (scientific) ***type identifier*** to identify a type.
 
-If a data type is too generic, we can extend it (the **base type**) to get more specific data types (i.e., **subtypes**); for example, a set containing all numbers is a base type of all other numeric types (e.g., real numbers, natural numbers, etc.). In general, **values of a subtype are also members of its ancestors**, and the subtypes **inherit all operations of their ancestors**; for example, suppose A data type has an opA operation, B is a subtype of A and has its opB operation. B will have the opA operation also, and all B values are A members. If a C data type inherits from B, it will have opA and opB operations, and every value of it is a member of B and A.
+***Data type*** is a type and possible ***operations*** we can apply to its members; for example, natural numbers set is a data type, and we can operate additions, subtractions, etc. 
 
-In programming, as in maths, we use a **variable** to represent a value. Like type, we use a **variable name** to identify a variable. Before using variables, we need to declare them (i.e., **variable declaration**). After declared, we can assign value (i.e., **variable assignment**) to it and reassign it later. If we don't want to reassign the value of a variable (after the first assignment), we declare it as a **constant**.
+If a data type is too generic, we can extend it (the ***base type***) to get more specific data types (i.e., ***subtypes***); for example, a set containing all numbers is a base type of all other numeric types (e.g., real numbers, natural numbers, etc.). In general, values of a subtype are also ***members of*** its ancestors, and the subtypes ***inherit*** all operations of their ancestors; for example, suppose A data type has an opA operation, B is a subtype of A and has its opB operation. B will have the opA operation also, and all B values are A members. If a C data type inherits from B, it will have opA and opB operations, and every value of it is a member of B and A.
+
+In programming, as in maths, we use a ***variable*** to represent a value. Like type, we use a ***variable name*** to identify a variable. Before using variables, we need to declare them (i.e., ***variable declaration***). After declared, we can assign value (i.e., ***variable assignment***) to it and reassign it later. When assigning variables in source codes, we often use some notations to represent values of simple types, such as numbers or texts, called ***literals***; for example, `123` and `12.3` are numeric literals, while `"123"` and `"abc"` are textual literals. In cases of we don't want to reassign the value of a variable (after the first assignment), we declare it as a ***constant***.
 
 ## Playing with JavaScript and Node.js
 
-The previous section gives us some [basic programming concepts](#basic-programming-concepts). Now, we will see how they are in JavaScript and Node.js. First, we look at [primitive data types]() and supported operations on each of them. Then we will hand on with [variables and constants](variable.md). After that, we try to be familiar with [functions](function.md) and [flow control structures]() before improving our programs with [modules](module.md) and [scopes](scope.md). And finally, we will work hard with [complex data types]() to reach more realistic programs.
+The previous section gives us some [basic programming concepts](#basic-programming-concepts). Now, we will see how they are in JavaScript and Node.js. First, we look at [primitive data types](data-type/primitive-types.md) and supported operations on each of them. Then we will hand on with [variables and constants](). After that, we try to be familiar with [functions]() and [flow control structures]() before improving our programs with [modules]() and [scopes](). And finally, we will work hard with [complex data types]() to reach more realistic programs.
 
-- [Primitive data types guide](data-type.md)
-- [Variables and constants guide](variable.md)
-- [Functions guide](function.md)
+- [Primitive data types guide](data-type/primitive-types.md)
+- [Variables and constants guide]()
+- [Functions guide]()
 - [Flow control structures guide]()
-- [Modules guide](module.md)
-- [Scopes guide](scope.md)
+- [Modules guide]()
+- [Scopes guide]()
 - [Complex data types guide]()
 
 ## Node.js a bit more
 
-- [Debugging](debug.md)
-- [Packages and npm](npm.md)
-- [Testing](test.md)
+- [Debugging]()
+- [Packages and npm]()
+- [Testing]()

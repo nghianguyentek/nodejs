@@ -1,6 +1,6 @@
 const { BRAND_HEADER, AGENT_HEADER, UserAgent } = require('../../../../vn/kihon/http/user-agent')
 
-test('null data', () => {
+test('user-agent:useragent:from:valid', () => {
     expect(UserAgent.from()).toBeNull()
 
     const userAgent = UserAgent.from({ headers: {} }),
@@ -9,7 +9,7 @@ test('null data', () => {
     expect(userAgent.equals(emptyUserAgent)).toBeTruthy()
 })
 
-test('has brand no platform', () => {
+test('user-agent:useragent:from:hasBrandNoPlatform', () => {
     const req = { headers: {} }
     req.headers[BRAND_HEADER] = '"Not_A Brand";v="99", "Microsoft Edge";v="109", "Chromium";v="109"'
 
@@ -19,7 +19,7 @@ test('has brand no platform', () => {
     expect(userAgent.equals(expectedResult)).toBeTruthy()
 })
 
-test('no brand has platform', () => {
+test('user-agent:useragent:from:hasPlatformNoBrand', () => {
     const req = { headers: {} }
     req.headers[AGENT_HEADER] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.70'
 
@@ -29,7 +29,7 @@ test('no brand has platform', () => {
     expect(userAgent.equals(expectedResult)).toBeTruthy()
 })
 
-test('has brand has platform', () => {
+test('user-agent:useragent:from:hasBrandAndPlatform', () => {
     const req = { headers: {} }
     req.headers[BRAND_HEADER] = '"Not_A Brand";v="99", "Microsoft Edge";v="109", "Chromium";v="109"'
     req.headers[AGENT_HEADER] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.70'
@@ -40,7 +40,7 @@ test('has brand has platform', () => {
     expect(userAgent.equals(expectedResult)).toBeTruthy()
 })
 
-test('<= 1ms', () => {
+test('user-agent:useragent:from:hasBrandAndPlatform:lessThan1ms', () => {
     const req = { headers: {} }
     req.headers[BRAND_HEADER] = '"Not_A Brand";v="99", "Microsoft Edge";v="109", "Chromium";v="109"'
     req.headers[AGENT_HEADER] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.70'
