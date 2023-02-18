@@ -1,4 +1,4 @@
-[Home](README.md) > [Premilinaries](README.md#preliminaries) > Node.js Installation Guide
+[Home](../README.md) > [Premilinaries](../README.md#preliminaries) > Node.js Installation Guide
 
 # Node.js Installation Guide
 
@@ -9,4 +9,4 @@ Since there are many Node.js versions, it's up to you to choose the latest LTS (
 1. Download or open [node-v14.17.3-x64.msi](https://nodejs.org/download/release/v14.17.3/node-v14.17.3-x64.msi).
 2. Follow the steps of the installer to complete the setup.
 
-[[Back to Preliminaries]](README.md#preliminaries)
+[[Back to Preliminaries]](../README.md#preliminaries)

@@ -1,4 +1,4 @@
-[Home](../README.md#playing-with-javascript-and-nodejs) > Data types > [Primitive](primitive-types.md) > `number` 
+[Home](../../README.md#playing-with-javascript-and-nodejs) > Data types > [Primitive](primitive-types.md) > `number` 
 
 # `number`
 

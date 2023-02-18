@@ -8,12 +8,12 @@ First, we start with the [preliminaries](#preliminaries) section to prepare the 
 
 ## Preliminaries
 
-Before playing with JavaScript, we need to install [Node.js](install.md) and [Visual Studio Code](visual-studio-code.md#installation), a powerful and free code editor. Then try to [compose a first script](visual-studio-code.md#start-coding) and [execute it](run-scripts.md).
+Before playing with JavaScript, we need to install [Node.js](guides/install.md) and [Visual Studio Code](guides/visual-studio-code.md#installation), a powerful and free code editor. Then try to [compose a first script](guides/visual-studio-code.md#start-coding) and [execute it](guides/run-scripts.md).
 
-- [Node.js installation guide](install.md)
-- [Install Visual Studio Code guide](visual-studio-code.md#installation)
-- [Start coding in Visual Studio Code](visual-studio-code.md#start-coding)
-- [Run a script](run-scripts.md)
+- [Node.js installation guide](guides/install.md)
+- [Install Visual Studio Code guide](guides/visual-studio-code.md#installation)
+- [Start coding in Visual Studio Code](guides/visual-studio-code.md#start-coding)
+- [Run a script](guides/run-scripts.md)
 
 ## Basic programming concepts
 
@@ -33,9 +33,9 @@ In programming, as in maths, we use a ***variable*** to represent a value. Like 
 
 ## Playing with JavaScript and Node.js
 
-The previous section gives us some [basic programming concepts](#basic-programming-concepts). Now, we will see how they are in JavaScript and Node.js. First, we look at [primitive data types](data-type/primitive-types.md) and supported operations on each of them. Then we will hand on with [variables and constants](). After that, we try to be familiar with [functions]() and [flow control structures]() before improving our programs with [modules]() and [scopes](). And finally, we will work hard with [complex data types]() to reach more realistic programs.
+The previous section gives us some [basic programming concepts](#basic-programming-concepts). Now, we will see how they are in JavaScript and Node.js. First, we look at [primitive data types](guides/data-type/primitive-types.md) and supported operations on each of them. Then we will hand on with [variables and constants](). After that, we try to be familiar with [functions]() and [flow control structures]() before improving our programs with [modules]() and [scopes](). And finally, we will work hard with [complex data types]() to reach more realistic programs.
 
-- [Primitive data types guide](data-type/primitive-types.md)
+- [Primitive data types guide](guides/data-type/primitive-types.md)
 - [Variables and constants guide]()
 - [Functions guide]()
 - [Flow control structures guide]()

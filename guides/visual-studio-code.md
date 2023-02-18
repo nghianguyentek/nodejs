@@ -1,4 +1,4 @@
-[Home](README.md#preliminaries) > [Premilinaries](README.md#preliminaries) > Visual Studio Code IDE
+[Home](../README.md#preliminaries) > [Premilinaries](../README.md#preliminaries) > Visual Studio Code IDE
 
 # Visual Studio Code IDE
 
@@ -6,7 +6,7 @@
 
 Go to [Visual Studio Code homepage](https://code.visualstudio.com/), and download an appropriate installer.
 
-[[Back to Preliminaries]](README.md#preliminaries)
+[[Back to Preliminaries]](../README.md#preliminaries)
 
 ## Start coding
 
@@ -18,7 +18,7 @@ Visual Studio Code will open the file to the main editor region, and you can sta
 
 *To open the `Terminal`, press `Ctrl + J`.*
 
-[[Back to Preliminaries]](README.md#preliminaries)
+[[Back to Preliminaries]](../README.md#preliminaries)
 
 ## Searching
 
