@@ -127,7 +127,7 @@ npm test "path" ["path" ... ]
 1. To run all test files in directories that have `test` in their names (e.g., `test`, `XXXtest`, `testXXX`, `XXXtestXXX`, etc.):
 
 ```sh
-npm test -- --testPathPattern "test"
+npm test "test"
 ```
 
 2. To run all test files in the current package that end with `url.test.js` in their names (e.g., `url.test.js`, `XXXurl.test.js`, etc.):
