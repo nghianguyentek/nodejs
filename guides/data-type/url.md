@@ -37,5 +37,3 @@ From the URL, we can get:
 - `href`: the string represents the whole URL
 - `pathname`: the `path` part of the URL.
 - `searchParams`: an [URLSearchParams](url-search-params.md) object contains the query parameters
-
-### Methods
