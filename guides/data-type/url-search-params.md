@@ -1,6 +1,6 @@
-﻿# URLSearchParams
+﻿# URLSearchParams object in JavaScript
 
-An utility deals with the query string part of a URL.
+An utility deals with the query string part of an URL.
 
 ## Methods
 
