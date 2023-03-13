@@ -28,12 +28,14 @@ From the URL, we can get:
 - `host`: `www.google.com`
 - `port`: `443`, implicitly
 - `path`: `/search`
-- `querystring`: `?q=url&oq=url&aqs=edge..69i57j69i60l5.18490j0j1&sourceid=chrome&ie=UTF-8` that has five query parameters `q`, `oq`, `aqs`, `sourceid`, and `ie` (with their values).
+- `querystring`: `?q=url&oq=url&aqs=edge..69i57j69i60l5.18490j0j1&sourceid=chrome&ie=UTF-8` that has five query parameters `q`, `oq`, `aqs`, `sourceid`, and `ie` and their values.
 
-## Properties
+## URL object in JavaScript
+
+### Properties
 
 - `href`: the string represents the whole URL
 - `pathname`: the `path` part of the URL.
 - `searchParams`: an [URLSearchParams](url-search-params.md) object contains the query parameters
 
-## Methods
+### Methods
