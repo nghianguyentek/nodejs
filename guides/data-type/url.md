@@ -9,7 +9,7 @@ An address is used to identify a resource on a target host, especially in a comp
 where:
 
 |Part|Required|Description|
-|-|:-:|-|
+|:-:|:-:|-|
 |`scheme`|Y| the protocol, such as `http`, `https`, etc.|
 |`username`|N|the username is used to login to the target host|
 |`password`|N|the password is used to login to the target host|
